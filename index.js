@@ -21,6 +21,6 @@ const blog_route = require("./routes/blogRoute");
 app.use('/', blog_route)
 
 // Listenning App 
-app.listen(3000, () =>{
+app.listen(3000, () => {
     console.log("Server is running...");
 });
