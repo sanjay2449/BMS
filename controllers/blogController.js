@@ -24,20 +24,21 @@ const loadPost = async (req, res) => {
 const addComment = async (req, res) => {
     try {
 
-        var post_id = req.body.post_id;
-        var username = req.body.username;
-        var comment = req.body.comment;
+        let post_id = req.body.post_id;
+        let username = req.body.username;
+        let comment = req.body.comment;
 
-        await Post.findByIdAndUpdate( {_id : post_id },{
-            $push : {
-                "comments" : { username : username , comment : comment }
+        await Post.findByIdAndUpdate({ _id: post_id }, {
+            $push: {
+                "comments": { username: username, comment: comment }
             }
-        } );
-        res.status(200).send({success : true , msg : 'Comment Added'})
+        },);
+        res.status(200).send({ success: true, msg: 'Comment Added' })
     } catch (error) {
-        res.status(200).send({success : false , msg : error.message})
+        res.status(200).send({ success: false, msg: error.message })
     }
 }
+
 
 module.exports = {
     loadBlog,

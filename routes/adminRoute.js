@@ -48,4 +48,5 @@ admin_route.get('/create-post',adminLoginAuth.isLogin, adminController.loadPostD
 admin_route.post('/create-post',adminLoginAuth.isLogin, adminController.addPostDashboard);
 
 
+
 module.exports = admin_route;

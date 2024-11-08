@@ -89,10 +89,10 @@ const loadPostDashboard = async (req, res) => {
 
 
 const  addPostDashboard = async (req, res) => {
-    try {
+    try {     
         const post = new Post({
             title: req.body.title,
-            content: req.body.content
+            content: req.body.content,
         })
 
         const postData = await post.save();
